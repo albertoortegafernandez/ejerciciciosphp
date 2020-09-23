@@ -12,6 +12,11 @@
 
     for ($row = 1; $row <= ultimo; $row++) {
         
+        echo "<tr>";
+            echo "<td>", $number. '*' .$row. ' = '  ,"</td>";
+            echo "<td>", $number*$row ,"</td>";
+            echo "<br>";
+        echo "</tr>";
     }
     ?>
 </body>
