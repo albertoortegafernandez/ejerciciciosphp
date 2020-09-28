@@ -52,5 +52,31 @@ foreach ($filas as $fila ) {
     echo "</tr>";
 }
 echo "</table>";
+
+
+
+echo 'Array ordenado doble inicializado en la declaración <hr>';
+$ciudades = array (
+    'Zaragoza' => array(
+        'poblacion' => 700000,
+        'gentilicio' => 'Zaragozano'
+    ), 
+    'Madrid' => array(
+        'poblacion' => 3000000,
+        'gentilicio' => 'Madrileño'
+    ), 
+    'Barcelona' => array(
+        'poblacion' => 3000000,
+        'gentilicio' => 'Barcelonés'
+    ), 
+    'Bilbao' => array(
+        'poblacion' => 500000,
+        'gentilicio' => 'Bilbaino'
+    ), 
+);
+
+echo "<pre>";
+print_r($ciudades);
+echo "</pre>";
 ?>
 </body></html>
