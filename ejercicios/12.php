@@ -14,7 +14,7 @@
              <h3>Por favor rellene su nombre </h3>
 
             <form method="post" action="12.php">
-            <label>Nombre</label> <input type="text" value="" name="nombre">
+            <label>Nombre</label> <input type="text" value="" name="nombre" required>
             <input type="submit" value="enviar">
             </form>
            <?php } ?> 
