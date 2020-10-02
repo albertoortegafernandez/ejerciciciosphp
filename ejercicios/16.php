@@ -13,9 +13,9 @@
             <hr>
                 <?php
                 if(isset ($_POST['nombres'])){
-                    foreach ($_POST['nombres'] as $position => $nombre) {
-                        echo "<li>" . $position . ": " . $nombre . "</li>";
-                    }  
+                    foreach ($_POST['nombres'] as $nombre) {
+                        echo "<li>".$nombre."</li>";
+                    }
                     }
                 ?> 
             </form>
