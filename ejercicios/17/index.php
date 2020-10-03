@@ -9,9 +9,13 @@
 <?php
     require_once "App.php";
     $app=new App;
-    echo "Metodo Fibonacci";
     $app->fibonacci();
     echo "<hr>";
+    $app->potencias2();
+    echo "<hr>";
+    $app->factoriales();
+    echo "<hr>";
+    $app->primos();
 ?>
 </body>
 </html>
