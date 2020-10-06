@@ -16,34 +16,26 @@ class App{
     
       $this->$method();      
     }
-  
+    public function index()
+    {
+      // echo "Estamos en el index<br>";
+      include('views/index.php');
+    }
     public function fibonacci(){
         $fibonacci=[];
         $numero1=0;
         $numero2=1;
         $suma=0;
 
-        //$fibonacci[]=$numero1;
-       // $fibonacci[]=$numero2;
+        $fibonacci[]=$numero1;
+        $fibonacci[]=$numero2;
         
-       /* while($suma<1000000){
+         while($suma<1000000){
           $suma=$numero1+$numero2;
-          $numero1=$numero2;
           $fibonacci[]=$suma;
-          $numero2++;
-          echo $suma;
+          $numero1=$numero2;
+          $numero2=$suma;
         }
-        include ('views/fibonacci.php');
-    }
-*/
-        for ($i = 1; $i < 100000; $i++) {
-            $suma=$numero1+$numero2;
-            $numero1=$numero2;
-            $numero2=$suma;
-                if ($suma<1000000){
-                    $fibonacci[]=$suma;
-                }
-            }
         include ('views/fibonacci.php');
     }
     public function potencias2(){
@@ -69,8 +61,10 @@ class App{
         include('views/factoriales.php');
     }   
     public function primos(){
-        echo "<h2>",'Los números primos entre 1 y 10.000 son: ',"</h2>";
+        //echo "<h2>",'Los números primos entre 1 y 10.000 son : ',"</h2>";
         
+        include ('views/primos.php');
     }
+
 }
 ?>

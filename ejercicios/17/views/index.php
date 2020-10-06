@@ -9,8 +9,10 @@
 <body>
   
   <ul>
-  <li><a href="/ejercicios/17?method=factoriales">Factoriales</a></li>
+  <li><a href="/ejercicios/17?method=fibonacci">Fibonacci</a></li>
   <li><a href="/ejercicios/17?method=potencias2">Pontencias de 2</a></li>
+  <li><a href="/ejercicios/17?method=factoriales">Factoriales</a></li>
+  <li><a href="/ejercicios/17?method=primos">Números primos</a></li>
 </ul>
   
   <div>
