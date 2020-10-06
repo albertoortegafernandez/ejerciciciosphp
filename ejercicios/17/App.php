@@ -23,8 +23,8 @@ class App{
         $numero2=1;
         $suma=0;
 
-        $fibonacci[]=$numero1;
-        $fibonacci[]=$numero2;
+        //$fibonacci[]=$numero1;
+       // $fibonacci[]=$numero2;
         
        /* while($suma<1000000){
           $suma=$numero1+$numero2;
@@ -36,7 +36,7 @@ class App{
         include ('views/fibonacci.php');
     }
 */
-        /*for ($i = 1; $i < 100000; $i++) {
+        for ($i = 1; $i < 100000; $i++) {
             $suma=$numero1+$numero2;
             $numero1=$numero2;
             $numero2=$suma;
@@ -45,7 +45,7 @@ class App{
                 }
             }
         include ('views/fibonacci.php');
-    }*/
+    }
     public function potencias2(){
         $potencias=[];
         //echo "<h2>",'Las potencias de 2 hasta 2 elevado a 24 son: ',"</h2>";
