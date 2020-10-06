@@ -3,23 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi aplicacion web</title>
+  <title>Fibonacci"</title>
 </head>
 <body>
+<h1>Los números de la sucesión fibonacci menores a 1 millon son:</h1>
 <?php
-    require_once "App.php";
-    $app=new App;
-    $app->run();   
+  foreach($fibonacci as $num){   
+    echo $num." ";      
+  }
 ?>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-

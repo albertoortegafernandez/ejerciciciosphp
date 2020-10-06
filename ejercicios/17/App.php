@@ -6,38 +6,67 @@ class App{
         $this->teacher = "Rafael Cabeza";
         $this->student = "Alberto Ortega";
     }
+    public function run()
+    {
+      if (isset($_GET['method'])) {
+        $method = $_GET['method'];
+      } else {
+        $method = 'index';
+      }
+    
+      $this->$method();      
+    }
+  
     public function fibonacci(){
+        $fibonacci=[];
         $numero1=0;
         $numero2=1;
-        echo "<h2>",'Los números de la sucesión fibonacci menores a 1 millon son: ',"</h2>";
-        echo $numero1,", ",$numero2,", ";
-        for ($i = 1; $i < 1000000; $i++) {
+        $suma=0;
+
+        $fibonacci[]=$numero1;
+        $fibonacci[]=$numero2;
+        
+       /* while($suma<1000000){
+          $suma=$numero1+$numero2;
+          $numero1=$numero2;
+          $fibonacci[]=$suma;
+          $numero2++;
+          echo $suma;
+        }
+        include ('views/fibonacci.php');
+    }
+*/
+        /*for ($i = 1; $i < 100000; $i++) {
             $suma=$numero1+$numero2;
             $numero1=$numero2;
             $numero2=$suma;
                 if ($suma<1000000){
-                    echo $suma. ", ";
+                    $fibonacci[]=$suma;
                 }
-        
-        }
-    }
+            }
+        include ('views/fibonacci.php');
+    }*/
     public function potencias2(){
-        echo "<h2>",'Las potencias de 2 hasta 2 elevado a 24 son: ',"</h2>";
+        $potencias=[];
+        //echo "<h2>",'Las potencias de 2 hasta 2 elevado a 24 son: ',"</h2>";
         for($i=1;$i<=24;$i++){
-            echo pow(2,$i);
-            echo ", ";
+            $potencias[]=pow(2,$i);
+            
         }
+        include('views/potencias2.php');
     }
+
     public function factoriales(){
+        $factoriales=[];
         $factorial=1;
-        echo "<h2>",'Los números factoriales mas proximos al millón son : ',"</h2>";
+        //echo "<h2>",'Los números factoriales mas proximos al millón son : ',"</h2>";
         for($i=1;$i<1000000;$i++){
             $factorial=$factorial +$i;
             if($factorial<1000000){
-                echo $factorial,", ";
+                $factoriales[]=$factorial;
             }        
         }
-
+        include('views/factoriales.php');
     }   
     public function primos(){
         echo "<h2>",'Los números primos entre 1 y 10.000 son: ',"</h2>";
