@@ -7,8 +7,10 @@
 </head>
 <body>
 <h1>los números primos entre 1 y 10.000 son:</h1>
-<ul>
-
-  </ul>
+<?php
+  foreach($primos as $num){  
+    echo $num." "; 
+  }
+  ?>
 </body>
 </html>

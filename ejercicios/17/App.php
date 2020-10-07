@@ -13,7 +13,6 @@ class App{
       } else {
         $method = 'index';
       }
-    
       $this->$method();      
     }
     public function index()
@@ -62,7 +61,20 @@ class App{
     }   
     public function primos(){
         //echo "<h2>",'Los números primos entre 1 y 10.000 son : ',"</h2>";
-        
+        $primos=[];
+        $primero=1;
+        $ultimo=10000;
+        for($i=1;$i<=$ultimo;$i++){
+          $contador=0;
+          for($j=1;$j<=$i;$j++){
+            if($i%$j==0){
+              $contador++;
+            }
+          }
+          if($contador<=2){
+            $primos[]=$i;
+          }
+        }
         include ('views/primos.php');
     }
 

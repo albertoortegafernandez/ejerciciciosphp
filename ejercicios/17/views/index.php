@@ -21,6 +21,6 @@
 
   Me llamo <?= $this->student ?>
   <br>
-  Estamos estudiando <?= $this->module ?> con el profesor <?= $app->teacher ?>
+  Estamos estudiando <?= $this->module ?> 
 </body>
 </html>
