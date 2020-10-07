@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <link rel="stylesheet" href="css/estilo.css">
   <title>Ejercicio17</title>
 </head>
 <body>
@@ -18,7 +18,6 @@
   <div>
   Estamos en el index
   </div>
-
   Me llamo <?= $this->student ?>
   <br>
   Estamos estudiando <?= $this->module ?> 
