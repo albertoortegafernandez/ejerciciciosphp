@@ -34,10 +34,7 @@ class App{
     }
 
     public function home(){
-        echo '<h1>Bienvenido al home </h1>'.'<br><br>';
-
-        echo '<a href="views/login.php">Cierre Sesion</a>';
-        
+        include ('views/home.php');
     }
 
 
