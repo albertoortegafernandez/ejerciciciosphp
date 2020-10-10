@@ -19,7 +19,7 @@ class App{
 
 
     public function login(){ 
-        if($_COOKIE['usuario']&&$_COOKIE['pass']){
+        if($_COOKIE['usuario'] && $_COOKIE['pass']){
           include ('views/home.php');
         }else{
         include ('views/login.php');
@@ -46,19 +46,19 @@ class App{
        $nuevoDeseo= $_POST['newDeseo'];
        $deseos=['Ir al cine','Comer en restaurante','Ver partido del Zaragoza',$nuevoDeseo];
         
-       header('Location: ?method=home');
+       include ('views/home.php');
       
     }
     public function delete(){
-      $eliminarDeseo=$_POST['delete'];
+      $eliminarDeseo=$_POST['eliminar'];
       unset($deseos[$eliminarDeseo]);
 
-      header('Location: ?method=home');
+      include ('views/home.php');
     }
     public function empty(){
-
       
-      header('Location: ?method=home');
+      
+      include ('views/home.php');
 
     }
     public function close(){
