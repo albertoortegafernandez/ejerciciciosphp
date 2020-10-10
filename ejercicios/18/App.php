@@ -18,16 +18,19 @@ class App{
     }
 
 
-    public function login(){
-
+    public function login(){ 
+        if($_COOKIE['usuario']&&$_COOKIE['pass']){
+          include ('views/home.php');
+        }else{
         include ('views/login.php');
+        }
     }
 
     public function auth(){
-        $nombre=$_POST['nombre'];
+        $nombre=$_POST['usuario'];
         $pass=$_POST['pass'];
 
-        setcookie('nombre', $nombre,time()+350);
+        setcookie('usuario', $nombre,time()+350);
         setcookie('pass', $pass,time()+350);
         //var_dump($_POST);
         header('Location: ?method=home');
@@ -37,6 +40,15 @@ class App{
         include ('views/home.php');
     }
 
+    public function logout(){
+      if($_COOKIE['usuario']&&$_COOKIE['pass']){
+          unset($_COOKIE['usuario']);
+          unset($_COOKIE['pass']);
+          setcookie('usuario','',time()-1);
+          setcookie('pass','',time()-1);
+      }
+      header('Location: index.php');
+    }
 
 
 

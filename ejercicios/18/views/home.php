@@ -1,5 +1,14 @@
+<html>
 
+<h1>Bienvenido al home <?php echo $_COOKIE['usuario'] ?> </h1><br><br>
 
-<h1>Bienvenido al home </h1><br><br>
-
-<a action="?method=login">Cierre Sesion</a>
+<a href="?method=logout"> Cierre Sesion</a>
+<h1>Lista de cookies</h1>
+    <pre>
+      <?php
+      if(!empty($_COOKIE)){
+        var_dump($_COOKIE);
+      }
+      ?>
+    </pre>
+</html>
