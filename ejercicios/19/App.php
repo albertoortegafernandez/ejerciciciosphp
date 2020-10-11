@@ -29,25 +29,26 @@ class App{
     public function auth(){
         $nombre=$_POST['usuario'];
 
-        setcookie('usuario', $nombre,time()+350);
+        setcookie('usuario', $nombre,time()+3600);
         //var_dump($_POST);
         header('Location: ?method=home');
     }
     
     public function home(){
-
         $deseos=['Ir al cine','Comer en restaurante','Ver partido del Zaragoza'];
+        setcookie("deseos",serialize($deseos),time()+3600);
+
         include ('views/home.php');
         
     }
 
 
     public function new(){
-       $nuevoDeseo= $_POST['newDeseo'];
-       $deseos=['Ir al cine','Comer en restaurante','Ver partido del Zaragoza',$nuevoDeseo];
-        
+       $deseos[]= $_POST['newDeseo'];
+       setcookie("deseos2",serialize($deseos[$_POST['newDeseo']]),time()+3600);
+       
        include ('views/home.php');
-      
+       //header('Location: ?method=home');
     }
     public function delete(){
       $eliminarDeseo=$_POST['eliminar'];
@@ -56,7 +57,8 @@ class App{
       include ('views/home.php');
     }
     public function empty(){
-      
+        unset($_COOKIE['deseos']);
+        setcookie('deseos','',time()-1);
       
       include ('views/home.php');
 
