@@ -42,17 +42,20 @@ class App{
         
     }
 
-
+    //esta mal
     public function new(){
        $deseos[]= $_POST['newDeseo'];
        setcookie("deseos2",serialize($deseos[$_POST['newDeseo']]),time()+3600);
        
        include ('views/home.php');
-       //header('Location: ?method=home');
+       
     }
+    //esta mal
     public function delete(){
-      $eliminarDeseo=$_POST['eliminar'];
-      unset($deseos[$eliminarDeseo]);
+      $deseos[]= $_POST['eliminar'];
+
+      unset($_COOKIE['eliminar']);
+      setcookie('eliminar','',time()-1);
 
       include ('views/home.php');
     }
