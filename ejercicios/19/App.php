@@ -44,8 +44,10 @@ class App{
 
     //esta mal
     public function new(){
-       $deseos[]= $_POST['newDeseo'];
-       setcookie("deseos2",serialize($deseos[$_POST['newDeseo']]),time()+3600);
+       
+       $deseos=['Ir al cine','Comer en restaurante','Ver partido del Zaragoza',$_POST['newDeseo']];
+       
+       setcookie("deseos2",serialize($deseos),time()+3600);
        
        include ('views/home.php');
        
@@ -62,16 +64,16 @@ class App{
     public function empty(){
         unset($_COOKIE['deseos']);
         setcookie('deseos','',time()-1);
-      
+        setcookie('deseos2','',time()-1);
       include ('views/home.php');
 
     }
     public function close(){
-      if($_COOKIE['usuario']&&$_COOKIE['pass']){
-          unset($_COOKIE['usuario']);
-          unset($_COOKIE['pass']);
+      if($_COOKIE['usuario']){
+          //unset($_COOKIE['usuario']);
+          //unset($_COOKIE['pass']);
           setcookie('usuario','',time()-1);
-          setcookie('pass','',time()-1);
+          
       }
       header('Location: index.php');
     }
