@@ -35,7 +35,7 @@ class App{
     }
     
     public function home(){
-        $deseos=$_COOKIE['deseos'];
+        $deseos=[];
         setcookie("deseos",serialize($deseos),time()+3600);
 
         include ('views/home.php');
@@ -47,19 +47,20 @@ class App{
        
        $deseos=unserialize($_COOKIE['deseos']);
        $deseos[]=$_POST['newDeseo'];
-       setcookie("deseos",serialize($deseos),time()+3600);
+       setcookie('deseos',serialize($deseos),time()+3600);
        
-       header('Location: ?method=home');
-       
+       header("refresh:1;url=index.php?method=home");
+       //include ('views/home.php');
     }
     //esta mal
     public function delete(){
+      $deseos=unserialize($_COOKIE['deseos']);
       $deseos[]= $_POST['eliminar'];
 
-      unset($_COOKIE['eliminar']);
-      setcookie('eliminar','',time()-1);
+      setcookie('eliminar',serialize($deseos),time()-1);
 
-      include ('views/home.php');
+      header("refresh:1;url=index.php?method=home");
+     //include ('views/home.php');
     }
     public function empty(){
         unset($_COOKIE['deseos']);

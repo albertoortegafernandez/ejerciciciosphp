@@ -14,7 +14,7 @@
             <?php     
                     if(isset($_COOKIE['deseos'])){
                         
-                        foreach($_COOKIE['deseos'] as $deseo){
+                        foreach($deseos as $deseo){
                             echo'<li>' .$deseo.'</li>';
                     }
                 }else{
