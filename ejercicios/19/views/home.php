@@ -12,16 +12,11 @@
     <h2>Esta es tu lista de deseos</h2>
         <ol>
             <?php     
-                    if(isset($_COOKIE['deseos'])){
-                        
-                        foreach($deseos as $deseo){
-                            echo'<li>' .$deseo.'</li>';
+                foreach($deseos as $deseo){
+                        echo'<li>' .$deseo.'</li>';
                     }
-                }else{
-                    echo '<h3>Tu lista está vacia</h3>';
-                }
             ?>
-        </ol>
+        </ol>    
     <h2>¿Deseas incluir un nuevo deseo?</h2>
     
         <form method="POST" action="?method=new">

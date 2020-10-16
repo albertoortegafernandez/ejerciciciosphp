@@ -35,9 +35,12 @@ class App{
     }
     
     public function home(){
-        $deseos=[];
-        setcookie("deseos",serialize($deseos),time()+3600);
 
+      if(isset($_COOKIE['deseos'])){
+        $deseos=unserialize($_COOKIE['deseos']);
+      }else{
+        $deseos=array();
+      }
         include ('views/home.php');
         
     }
