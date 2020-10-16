@@ -20,9 +20,9 @@ class App{
 
     public function login(){ 
         if($_COOKIE['usuario'] && $_COOKIE['pass']){
-          include ('views/home.php');
+          header('Location: ?method=home');
         }else{
-        include ('views/login.php');
+          include ('views/login.php');
         }
     }
 
@@ -35,7 +35,7 @@ class App{
     }
     
     public function home(){
-        $deseos=['Ir al cine','Comer en restaurante','Ver partido del Zaragoza'];
+        $deseos=['Ir al cine','Comer en restaurante','Ver partido del Real Zaragoza'];
         setcookie("deseos",serialize($deseos),time()+3600);
 
         include ('views/home.php');
@@ -45,11 +45,11 @@ class App{
     //esta mal
     public function new(){
        
-       $deseos=['Ir al cine','Comer en restaurante','Ver partido del Zaragoza',$_POST['newDeseo']];
+       $deseos=unserialize($_COOKIE['deseos']);
+       $deseos[]=$_POST['newDeseo'];
+       setcookie("deseos",serialize($deseos),time()+3600);
        
-       setcookie("deseos2",serialize($deseos),time()+3600);
-       
-       include ('views/home.php');
+       header('Location: ?method=home');
        
     }
     //esta mal
