@@ -12,18 +12,43 @@ class App{
       if (isset($_GET['method'])) {
         $method = $_GET['method'];
       } else {
-        $method = 'login';
+        $method = 'home';
       }
       $this->$method();      
     }
 
 
     public function home(){
-        setcookie("color","",time()+3600);
+        $color=[];
+        setcookie("color",serialize ($color),time()+3600);
 
         include ('views/home.php');
-        
     }
+    public function cambio(){
+        //$color=unserialize($_COOKIE['color']);
+        $color[]=$_POST['color'];
+        setcookie('color',serialize ($color),time()+3600);
+        
+        //var_dump($_POST); 
+        //si recoge el texto de la cookie pero nose porque no me ejecuta las opciones
+        //Y sigue dando problema con el header location como en el ejercicio anterior.... AYUDAAA!!!!!! :(
 
+        switch ($color){
+            case 'azul':?>
+                <body id="azul"> <?
+            break;
+            case 'amarillo':?>
+                <body id="amarillo"> <?
+            break;
+            case 'verde':?>
+                <body id="verde"> <?
+            break;
+            case 'rojo':?>
+                <body id="rojo"> <?
+            break;
+        }
+        //include ('views/home.php');
+        header('Location: ?method=home');
+    }
  
 }
