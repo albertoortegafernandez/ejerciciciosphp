@@ -35,7 +35,7 @@ class App{
     }
     
     public function home(){
-        $deseos=['Ir al cine','Comer en restaurante','Ver partido del Real Zaragoza'];
+        $deseos=$_COOKIE['deseos'];
         setcookie("deseos",serialize($deseos),time()+3600);
 
         include ('views/home.php');
