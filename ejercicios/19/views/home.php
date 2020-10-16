@@ -28,7 +28,7 @@
             <label>Nuevo Deseo</label> <input type="text" value="" name="newDeseo" >
             <input type="submit" value="Enviar">
         </form>   
-    <h2>¿Deseas borrar un deseo de tu lista?. Indique el numero</h2> 
+    <h2>¿Deseas borrar un deseo de tu lista?. Indique el nombre correcto</h2> 
 
         <form method="POST" action="?method=delete">
             <label>Eliminar Deseo</label> <input type="text" value="" name="eliminar" >
