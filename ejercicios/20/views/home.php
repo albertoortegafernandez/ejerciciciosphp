@@ -6,18 +6,20 @@
   <link rel="stylesheet" href="views/colores.css">
   <title>Home</title>
   </head>
-<body>
+  <?php           
+    foreach($color as $pinta){
+        if($pinta=="Azul"){?>
+            <body id="azul"> <?php
+        }if($pinta=="Amarillo"){?>
+            <body id="amarillo"> <?php
+        }if($pinta=="Verde"){?>
+            <body id="verde"> <?php
+        }if($pinta=="Rojo"){?>
+            <body id="rojo"> <?php
+        }
+    }?>        
     <h1>Bienvenido al home </h1><br><br>
-    <?php     
-                    if(isset($_COOKIE['color'])){
-                        
-                        foreach($color as $pinta){
-                            echo'<h3>'. "Actualmente su color de fondo es" .$pinta.'</h3>';
-                    }
-                }else{
-                    echo '<h3>No existe color de fondo</h3>';
-                }
-            ?>
+        
     <h2>¿De que color ponemos el fondo de su página?</h2><br>
         
     <form method="post" action="?method=cambio">
@@ -25,6 +27,6 @@
         <input type="submit" value="Amarillo" name="amarillo" >
         <input type="submit" value="Verde" name="verde" >   
         <input type="submit" value="Rojo" name="rojo" >
-    </form>
+    </form> 
 </body>
 </html>

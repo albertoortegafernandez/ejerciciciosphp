@@ -19,35 +19,30 @@ class App{
 
 
     public function home(){
-        $color=[];
-        setcookie("color",serialize ($color),time()+3600);
-
+        if(isset($_COOKIE['color'])){
+            $color=unserialize($_COOKIE['color']);
+          }else{
+            $color=array();
+          }
         include ('views/home.php');
     }
     public function cambio(){
-        //$color=unserialize($_COOKIE['color']);
-        $color[]=$_POST['color'];
-        setcookie('color',serialize ($color),time()+3600);
-        
-        //var_dump($_POST); 
-        //si recoge el texto de la cookie pero nose porque no me ejecuta las opciones
-        //Y sigue dando problema con el header location como en el ejercicio anterior.... AYUDAAA!!!!!! :(
-
-        switch ($color){
-            case 'azul':?>
-                <body id="azul"> <?
-            break;
-            case 'amarillo':?>
-                <body id="amarillo"> <?
-            break;
-            case 'verde':?>
-                <body id="verde"> <?
-            break;
-            case 'rojo':?>
-                <body id="rojo"> <?
-            break;
+        unset($_COOKIE['color']);
+        setcookie('color','',time()-1);
+        if($_POST['rojo']){
+            $color[]=$_POST['rojo'];
+            setcookie('color',serialize($color),time()+3600);
+        }else if($_POST['amarillo']){
+            $color[]=$_POST['amarillo'];
+            setcookie('color',serialize($color),time()+3600);
+        }else if($_POST['azul']){
+            $color[]=$_POST['azul'];
+            setcookie('color',serialize($color),time()+3600);
+        }else if($_POST['verde']){
+            $color[]=$_POST['verde'];
+            setcookie('color',serialize($color),time()+3600);
         }
-        //include ('views/home.php');
+        
         header('Location: ?method=home');
     }
  
