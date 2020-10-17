@@ -7,14 +7,12 @@
   </head>
 <body>
     <h1>Bienvenido al home <?php echo $_COOKIE['usuario'] ?> </h1><br><br>
-
-    
     <h2>Esta es tu lista de deseos</h2>
         <ol>
             <?php     
                 foreach($deseos as $deseo){
-                        echo'<li>' .$deseo.'</li>';
-                    }
+                    echo'<li>' .$deseo.'</li>';
+                }
             ?>
         </ol>    
     <h2>¿Deseas incluir un nuevo deseo?</h2>
