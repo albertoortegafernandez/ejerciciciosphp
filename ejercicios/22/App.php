@@ -19,7 +19,8 @@ class App{
         include ('views/home.php');
     }
     public function cambio(){
-        if($_POST['rojo']){
+        //var_dump($_POST);exit();
+       /* if($_POST['rojo']){
             $_SESSION['color']=$_POST['rojo'];  
         }else if($_POST['amarillo']){
             $_SESSION['color']=$_POST['amarillo'];
@@ -27,7 +28,8 @@ class App{
             $_SESSION['color']=$_POST['azul'];
         }else if($_POST['verde']){
             $_SESSION['color']=$_POST['verde'];
-        }
+        }*/
+        $_SESSION['color']=$_POST['color'];
         header('Location: ?method=home');
     }
  

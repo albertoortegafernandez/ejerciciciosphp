@@ -9,25 +9,17 @@
     <link rel="stylesheet" href="views/colores.css">
     <title>Colores con sesiones</title>
     </head>
-    <?php          
-        if($_SESSION['color']=="Azul"){?>
-            <body id="azul"> <?php
-        }if($_SESSION['color']=="Amarillo"){?>
-            <body id="amarillo"> <?php
-        }if($_SESSION['color']=="Verde"){?>
-            <body id="verde"> <?php
-        }if($_SESSION['color']=="Rojo"){?>
-            <body id="rojo"> <?php
-    }?>        
+    <body id="<?= $_SESSION['color']?>">
+
     <h1>Bienvenido al home </h1><br><br>
         
     <h2>¿De que color ponemos el fondo de su página?</h2><br>
         
     <form method="post" action="?method=cambio">
-        <input type="submit" value="Azul" name="azul" >
-        <input type="submit" value="Amarillo" name="amarillo" >
-        <input type="submit" value="Verde" name="verde" >   
-        <input type="submit" value="Rojo" name="rojo" >
+        <input type="submit" value="azul" name="color" >
+        <input type="submit" value="amarillo" name="color" >
+        <input type="submit" value="verde" name="color" >   
+        <input type="submit" value="rojo" name="color" >
     </form> 
 </body>
 </html>
