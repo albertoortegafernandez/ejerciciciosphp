@@ -14,7 +14,6 @@ class App{
       $this->$method();      
     }
 
-
     public function login()
     { 
       if($_SESSION['usuario'] && $_SESSION['pass']){
@@ -29,16 +28,21 @@ class App{
       $_SESSION['usuario']=$_POST['usuario'];
       header('Location: ?method=home');
     }
-    
+
     public function home()
     {
       include ('views/home.php'); 
     }
-    public function new()
-    {
-       $deseos[]=$_POST['newDeseo'];
-       $_SESSION['deseos']=$deseos; 
 
+    public function new()
+    { 
+      if(isset($_POST['newDeseo']) && !empty($_POST['newDeseo'])){
+      $new=$_POST['newDeseo'];
+      $deseos=$_SESSION['deseos'];
+     // var_dump($deseos);exit();
+      $deseos[]=$new;
+      $_SESSION['deseos']=$deseos;
+      }
        header("Location: ?method=home");;
     }
     
@@ -48,12 +52,13 @@ class App{
       unset($_SESSION['deseos'][$id]);
       header("Location: ?method=home");
     }
+
     public function empty()
     {
       unset($_SESSION['deseos']);
       header("Location: ?method=home");
-
     }
+
     public function close()
       {
       session_destroy();
