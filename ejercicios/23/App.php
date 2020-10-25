@@ -18,13 +18,9 @@ class App{
         include ('views/home.php');
     }
     public function abrirDeseos(){
-        $abrir=fopen("deseos.txt","r");
-        if(!$abrir=fopen("deseos.txt","r")){
-            echo "No podemos leer tu lista de deseos";
-        }else{
-            echo $abrir;
-        }
-        header("Location: ?=method home.php");
+       // $deseos=fopen("views/deseos.txt","r");
+        
+        //header("Location: ?=method home.php");
     }
     public function escribirDeseo(){
 

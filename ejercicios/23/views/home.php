@@ -9,12 +9,11 @@
     <h1>Bienvenido al home</h1><br><br>
     <h2>Esta es tu lista de deseos</h2>
     <?php 
-        /*$file="views/deseos.txt";
+        $file="views/deseos.txt";
         $fp=fopen($file,"r");
-        $contents=fread($fp,filesize($file));
+        $contents=fread($fpe,filesize($file));
         fclose($fp);
-        var_dump($contents);*/
-        var_dump($deseos);
+        var_dump($contents);
     ?>
        
 
