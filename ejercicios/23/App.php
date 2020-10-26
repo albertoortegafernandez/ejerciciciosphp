@@ -15,14 +15,16 @@ class App{
     }
     public function home()
     {
-        include ('views/home.php');
+      $archivo=fopen("views/deseos2.txt","r");
+      include ('views/home.php');
+      fclose($archivo);
     }
-    public function abrirDeseos(){
-       // $deseos=fopen("views/deseos.txt","r");
-        
-        //header("Location: ?=method home.php");
+    public function new(){
+      $archivo=fopen("views/deseos2.txt","a");
+      $nuevo=$_POST['newDeseo'];
+      fwrite($archivo,$nuevo .PHP_EOL);
+      fclose($archivo);
+      header('Location: ?method=home');
     }
-    public function escribirDeseo(){
-
-    }
+  
 }
